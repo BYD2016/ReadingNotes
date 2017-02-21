@@ -6,8 +6,8 @@ Josh Long, @starbuxman
   * A tool for getting started very quickly with Spring
   * Common non-functional requirements for a "real" application
   * Exposes a lot of useful features by default
-  * Gets out of the way quickly if you want to change defaults
-  + An opportunity for Spring to be opinionated
+  * Gets out of the way quickly if you want to change defaults  
+  * An opportunity for Spring to be opinionated
 ---
 
 ## 2. ಠ_ಠ Spring Boot is NOT
