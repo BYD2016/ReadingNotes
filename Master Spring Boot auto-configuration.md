@@ -1,16 +1,18 @@
 # Master Spring Boot auto-configuration
+
 ## 1. Auto-configuration class
-+ Regular `@Configuration` class
-+ Referenced in `META-INF/spring.factories`
-+ Enabled (Guarded) via certain conditions
-+ Can be triggered before or after another auto-configuration
-  * @AutoConfigureBefore
-  * @AutoConfigureAfter
-+ Displayed in the auto-configuration report
- * Logs when debug is enabled (·—debug·)
- * ·/autoconfig· on a web app with the actuator
----
+ + Regular `@Configuration` class
+ + Referenced in `META-INF/spring.factories`
+ + Enabled (Guarded) via certain conditions
+ + Can be triggered before or after another auto-configuration
+   * @AutoConfigureBefore
+   * @AutoConfigureAfter
+ + Displayed in the auto-configuration report
+   * Logs when debug is enabled (`—debug`)
+   * `/autoconfig` on a web app with the actuator
+
 ## 2. Spring 4 @Conditional
+
 ```java
 @Configuration
 @Conditional(CustomCondition.class)
@@ -25,8 +27,9 @@ public class CustomCondition implements Condition {
   }
 }
 ```
----
+
 ## 3. Core conditions
+
 + @ConditionalOn[Missing]Class
 + @ConditionalOn[Missing]Bean
 + @ConditionalOnProperty
@@ -36,8 +39,8 @@ public class CustomCondition implements Condition {
 + @ConditionalOnJava - @ConditionalOnJndi
 + AnyNestedCondition
 + [your condition here]
----
-## 4. Let’s build our own auto-config+
+
+## 4. Let’s build our own auto-config!
 + `xyz-spring-boot-autoconfigure`
   * Auto-configuration classes and related code
 + `xyz-spring-boot-starter`
@@ -46,8 +49,9 @@ public class CustomCondition implements Condition {
 + Example based on HornetQ
  * Actually implemented in Spring Boot
  * Real world example with interesting configuration options
----
+
 ## 5. @ConfigurationProperties
+
 + Complete infrastructure to customize your auto-configuration
 + Just add ·@EnableConfigurationProperties(MyProperties.class)·
   * Add that class as a bean in the context (i.e. you can inject it)
@@ -57,7 +61,8 @@ public class CustomCondition implements Condition {
   * Generate the relevant meta-data so that the IDE can pick that up
   * Description (field javadoc), default value, type
 + Make that an isolated (configuration-only) thing
----
+
+
 ## 6. Configuration to the rescue. Again.
 +  An auto-configuration can work in several ways (modes)
   *  Ideally extra conditions should discriminate them
@@ -65,7 +70,8 @@ public class CustomCondition implements Condition {
 +  Not always a sunny day
   *  Achieving a good result for the end user may mean low-level checks
   *  Usually more practical to custom conditions
----
+
+
 ## 7. Advanced customizations
 + Try to put you in the shoes of the user
 + ·@ConditionalOnMissingBean· to replace auto-configuration partially
@@ -73,7 +79,7 @@ public class CustomCondition implements Condition {
   * EmbeddedJMS
 + Callback interface to customize things
   * HornetQConfigurationCustomizer
----
+
 ## 8. Your own Condition
 + Many use cases already covered by Spring Boot
 + Reuse `SpringBootCondition` base class
@@ -84,7 +90,8 @@ public class CustomCondition implements Condition {
   condition does not match
   *  REGISTER_BEAN: evaluated when the bean factory has more information
 + Specify order wisely so that cheap conditions are evaluated first
----
+
+
 ## 9. CLI customizations
 ```java
 package org.test
@@ -101,7 +108,7 @@ class ThisWillActuallyRun {
 
 }
 ```
----
+
 ## 10. CLI customizations
 + Parse your Groovy script
 + Grab extra dependencies
