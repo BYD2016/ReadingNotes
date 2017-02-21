@@ -2,12 +2,12 @@
 Josh Long, @starbuxman
 
 ## 1. Introduction to Spring Boot
-  * Single point of focus (as opposed to large collection of spring-* projects)
-  * A tool for getting started very quickly with Spring
-  * Common non-functional requirements for a "real" application
-  * Exposes a lot of useful features by default
-  * Gets out of the way quickly if you want to change defaults  
-  * An opportunity for Spring to be opinionated
+* Single point of focus (as opposed to large collection of spring-* projects)
+* A tool for getting started very quickly with Spring
+* Common non-functional requirements for a "real" application
+* Exposes a lot of useful features by default
+* Gets out of the way quickly if you want to change defaults  
+* An opportunity for Spring to be opinionated
 ---
 
 ## 2. ಠ_ಠ Spring Boot is NOT
@@ -302,7 +302,6 @@ compile("org.springframework.boot:spring-boot-starter-web")
 + Distribute a client lib in your company
 + Standardize usage of component X in a platform
 + [your use case here]
-
 ---
 ## 23. New auto-config project
 ```xml
