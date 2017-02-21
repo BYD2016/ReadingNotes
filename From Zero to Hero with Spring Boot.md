@@ -7,14 +7,14 @@ Josh Long, @starbuxman
   * Common non-functional requirements for a "real" application
   * Exposes a lot of useful features by default
   * Gets out of the way quickly if you want to change defaults
-  * An opportunity for Spring to be opinionated
+  + An opportunity for Spring to be opinionated
 ---
 
 ## 2. ಠ_ಠ Spring Boot is NOT
-+  A prototyping tool
-+  Only for embedded container apps
-+  Sub-par Spring experience
-+  For Spring beginners only
++ A prototyping tool
++ Only for embedded container apps
++ Sub-par Spring experience
++ For Spring beginners only
 ---
 
 ## 3.Installation
@@ -278,6 +278,7 @@ $ cf scale jsug -i 4
 
 + Spring Boot features get a lot done for 12factor.net
 + PaaS friendly: fast startup, devops oriented
+
 ---
 
 ## 21. Starter POMs
@@ -294,12 +295,14 @@ compile("org.springframework.boot:spring-boot-starter-web")
 + standard POM / gradle files: define dependencies
 + many available: batch, integration, web, ampq…
 + starter data-jpa = spring-data-jpa + hibernate
+
 ---
 ## 22. Writing your own starter
 + Add support for X in Boot with a PR+
 + Distribute a client lib in your company
 + Standardize usage of component X in a platform
 + [your use case here]
+
 ---
 ## 23. New auto-config project
 ```xml
@@ -350,10 +353,10 @@ public class HelloServiceAutoConfiguration {
 ```
 
 ## 27. Declare the auto-configuration
-'''
+```
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 demo.hello.HelloServiceAutoConfiguration
-'''
+```
 
 ```java
 // one can order AutoConfigurations
@@ -388,6 +391,7 @@ public class Startup implements CommandLineRunner {
 ```
 + A Hello Service implementation is used on startup
 + Running this will use the default implementation
+
 ---
 
 ## 30. Override default (auto-configured) implementation
@@ -401,6 +405,7 @@ public HelloService helloService() {
 ```
 + Add a @Bean definition in our DemoApplication class
 + We provide our own implementation, so the default one won’t be created
+
 ---
 
 ## 31. Add type-safe properties
@@ -450,6 +455,7 @@ public class ConsoleHelloService implements HelloService {
 + uses Javadoc to build keys descriptions
 + default values detected
 + manual declaration allowed
+
 ---
 
 ## 35. Document properties
